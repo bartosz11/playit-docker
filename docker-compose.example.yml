@@ -1,0 +1,22 @@
+#Syntax version 
+version: "3"
+
+services:
+  playit:
+    container_name: "playit"
+    image: bartosz11/playit-docker:latest
+    restart: unless-stopped
+    environment:
+      #This allows us to set the timezone, Europe/London for example
+      #List of TZ timezones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      TZ: "Europe/London"
+    volumes:
+      #If you want to specify a volume for storing playit.toml (config), remember to bind it to /home/container 
+      - example-volume:/home/container  
+
+#Volumes need to be declared here also
+volumes:
+    #The volume name
+    example-volume:
+        #If you've already created the volume with "docker volume create", you can set this to true
+        external: false  

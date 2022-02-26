@@ -74,7 +74,7 @@ First, you should check what networks can your server access:
 docker inspect <container name>
 ```
 the output will be a big JSON array. We're looking for something like this:
-![A screenshot of docker inspect output](/assets/images/network-example.png) 
+![A screenshot of docker inspect output](images/network-example.png) <br/>
 It'll probably look different than this example. Note the IP address after "Gateway" somewhere, we'll use it in a moment. <br/>
 Now, you should go to [https://playit.gg/account/tunnels](https://playit.gg/account/tunnels) and create a new tunnel or edit existing one. <br/>
 Let's say our example server is Minecraft Java Edition server. So, if you're creating new tunnel, select Minecraft Java, then, page will ask you can you connect to server with 127.0.0.1:25565. Click "No". Then set the local IP to the address you've noted before. Set local port to the port your container exposes. Click "set". Then click "Add tunnel". Assuming both agent and the server are running, you should be able to connect to the server with the tunnel address. <br/>
